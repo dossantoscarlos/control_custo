@@ -1,0 +1,39 @@
+[project]
+name = "control-custo"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Carlos Eduardo",email = "anjoazrael10@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "fastapi (>=0.117.1,<0.118.0)",
+    "pandas (>=2.3.2,<3.0.0)",
+    "numpy (>=2.3.3,<3.0.0)",
+    "sqlalchemy (>=2.0.43,<3.0.0)",
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "uvicorn (>=0.36.0,<0.37.0)",
+    "python-jose (>=3.5.0,<4.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "types-python-jose (>=3.5.0.20250531,<4.0.0.0)",
+    "types-requests (>=2.32.4.20250913,<3.0.0.0)",
+    "taskipy (>=1.14.1,<2.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "control_custo", from = "src"}]
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.13.1"
+isort = "^6.0.1"
+
+[tool.taskipy.tasks]
+lint = "ruff check . && isort --check ."
+test = "pytest"
+run = "uvicorn src.control_custo.main:app --host 0.0.0.0 --port 8000"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

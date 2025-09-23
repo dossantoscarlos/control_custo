@@ -1,0 +1,30 @@
+POST  http://localhost/auth
+Content-Type: application/json
+Accept: application/json
+
+#########
+GET  http://localhost/api/me
+Content-Type: application/json
+Accept: application/json
+
+
+#####
+curl -X POST "http://localhost:8080/realms/fastapi-realm/protocol/openid-connect/token" \
+  -H "Content-Type: application/x-www-form-urlencoded" \
+  -d "client_id=fastapi-id-client" \
+  -d "client_secret=" \
+  -d "username=fastapi" \
+  -d "password=fastapi" \
+  -d "grant_type=password"
+
+
+#####
+curl -X POST "http://localhost/api/login"\
+    -H "Content-Type: application/json"\
+    -d '{
+            "client_id": "fastapi-id-client",
+            "username": "fastapi",
+            "password": "fastapi",
+            "grant_type": "password"
+        }
+    '

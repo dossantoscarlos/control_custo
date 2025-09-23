@@ -1,0 +1,33 @@
+{
+  "realm": "myrealm",
+  "enabled": true,
+  "clients": [
+    {
+      "clientId": "fastapi-app",
+      "secret": "super-secret-fastapi",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "directAccessGrantsEnabled": true,
+      "redirectUris": [
+        "http://localhost/auth/*"
+      ]
+    }
+  ],
+  "users": [
+    {
+      "username": "admin_test",
+      "enabled": true,
+      "emailVerified": true,
+      "firstName": "admin",
+      "lastName": "admin",
+      "credentials": [
+        {
+          "type": "password",
+          "value": "admin",
+          "temporary": false
+        }
+      ]
+    }
+  ]
+}
