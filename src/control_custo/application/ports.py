@@ -14,3 +14,7 @@ class ItemRepository(ABC):
     @abstractmethod
     def create(self, item: Item) -> Item:
         pass
+
+    @abstractmethod
+    def get_next_id(self) -> int:
+        pass

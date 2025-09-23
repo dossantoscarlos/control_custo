@@ -1,3 +1,5 @@
+@token=eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJVTmotWjFBSFE5RVVleHRlMExOSXpnQXJhdkdFR0w2TkxFSzd5UmdaUHYwIn0.eyJleHAiOjE3NTg2NjcxMTYsImlhdCI6MTc1ODY2NjgxNiwianRpIjoib25ydHJvOjU4NTM4NDlmLWFkMDgtNDBlOS1lNWZjLWM1NjFmMTIyMGNmYSIsImlzcyI6Imh0dHA6Ly9rZXljbG9hazo4MDgwL3JlYWxtcy9mYXN0YXBpLXJlYWxtIiwiYXVkIjpbInJlYWxtLW1hbmFnZW1lbnQiLCJicm9rZXIiLCJhY2NvdW50Il0sInN1YiI6IjQwYTRjM2ZkLTYxMzEtNGRkYi1iMWNkLTg4ZjI1ODYyMzM0ZCIsInR5cCI6IkJlYXJlciIsImF6cCI6ImZhc3RhcGktaWQtY2xpZW50Iiwic2lkIjoiODQ5MWNlNjAtODRhOS00ODEyLTkyNmYtM2Q0NTM3NjkzZWQwIiwiYWNyIjoiMSIsImFsbG93ZWQtb3JpZ2lucyI6WyIvKiJdLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1mYXN0YXBpLXJlYWxtIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiJdfSwicmVzb3VyY2VfYWNjZXNzIjp7InJlYWxtLW1hbmFnZW1lbnQiOnsicm9sZXMiOlsidmlldy1yZWFsbSIsInZpZXctaWRlbnRpdHktcHJvdmlkZXJzIiwibWFuYWdlLWlkZW50aXR5LXByb3ZpZGVycyIsImltcGVyc29uYXRpb24iLCJyZWFsbS1hZG1pbiIsImNyZWF0ZS1jbGllbnQiLCJtYW5hZ2UtdXNlcnMiLCJxdWVyeS1yZWFsbXMiLCJ2aWV3LWF1dGhvcml6YXRpb24iLCJxdWVyeS1jbGllbnRzIiwicXVlcnktdXNlcnMiLCJtYW5hZ2UtZXZlbnRzIiwibWFuYWdlLXJlYWxtIiwidmlldy1ldmVudHMiLCJ2aWV3LXVzZXJzIiwidmlldy1jbGllbnRzIiwibWFuYWdlLWF1dGhvcml6YXRpb24iLCJtYW5hZ2UtY2xpZW50cyIsInF1ZXJ5LWdyb3VwcyJdfSwiYnJva2VyIjp7InJvbGVzIjpbInJlYWQtdG9rZW4iXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJ2aWV3LWFwcGxpY2F0aW9ucyIsInZpZXctY29uc2VudCIsInZpZXctZ3JvdXBzIiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJkZWxldGUtYWNjb3VudCIsIm1hbmFnZS1jb25zZW50Iiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJwcm9maWxlIGVtYWlsIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJyZXN0IGZhc3RhcGkiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJmYXN0YXBpIiwiZ2l2ZW5fbmFtZSI6InJlc3QiLCJmYW1pbHlfbmFtZSI6ImZhc3RhcGkiLCJlbWFpbCI6ImVkdWFyZG8xOTE5NDlAaG90bWFpbC5jb20ifQ.NUwMP-ENpFJQYIDFuYLkeKAM-VSCZJpzPkzsjjLDi5TENH6TDKPZLkWBXyKcHsF5MRwUeCiTVynt5kLKatg0y2HakI21md2vgkmRBf9HHus2_YhKabMKKJ5IsV90VQYuExhgPCuYJICEgzZptCvrfeRYjeZbYzjaNgAe2MZVhm-oXg3GEk_tSKER9HiQO3XCqvQYB42Rbk1zTFnggeuJWUwLqXZxswBi6gdHxuHJoO-lig1V3zYXZYx4M0KNONdCbggjMtaR2MLXkAOyMnkZKtIervtDdeL4QvUv1eTtks0uWm-Q-t_H-cV7wXrC8qN9n8j1tpsAdLQxDuPhyksmUw
+####
 POST  http://localhost/auth
 Content-Type: application/json
 Accept: application/json
@@ -8,23 +10,31 @@ Content-Type: application/json
 Accept: application/json
 
 
-#####
-curl -X POST "http://localhost:8080/realms/fastapi-realm/protocol/openid-connect/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "client_id=fastapi-id-client" \
-  -d "client_secret=" \
-  -d "username=fastapi" \
-  -d "password=fastapi" \
-  -d "grant_type=password"
+# #####
+# POST http://localhost:8080/realms/fastapi-realm/protocol/openid-connect/token
+# Content-Type: application/x-www-form-urlencoded
 
+# client_id=fastapi-id-client
+# client_secret=""
+# username=fastapi
+# password=fastapi
+# grant_type=password
 
 #####
-curl -X POST "http://localhost/api/login"\
-    -H "Content-Type: application/json"\
-    -d '{
-            "client_id": "fastapi-id-client",
-            "username": "fastapi",
-            "password": "fastapi",
-            "grant_type": "password"
-        }
-    '
+POST http://localhost:8000/login
+Content-Type: application/json
+
+{
+  "username": "fastapi",
+  "password": "fastapi"
+}
+
+#####
+GET http://localhost:8000/me
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+###
+GET http://localhost:8000/items
+Content-Type: application/json
+Authorization: Bearer {{token}}
