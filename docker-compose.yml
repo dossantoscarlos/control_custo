@@ -107,6 +107,12 @@ services:
     build:
       context: .
     container_name: fastapi
+    deploy:
+      resources:
+        limits:
+          cpus: '0.5'
+          memory: 512M
+    restart: unless-stopped
     networks:
       - monitoring
     depends_on:
