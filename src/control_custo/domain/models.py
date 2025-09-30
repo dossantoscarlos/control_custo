@@ -6,10 +6,11 @@ class Item(BaseModel):
     name: str
     description: Optional[str] = None
 
-
-class TokenDTO(BaseModel):
-    access_token: str
-
+class TokenResponse(BaseModel):
+    access_token: Optional[str] = None
+    token_type: Optional[str] = None
+    error: Optional[str] = None
+    error_description: Optional[str] = None
     
 class LoginRequest(BaseModel):
     username: str

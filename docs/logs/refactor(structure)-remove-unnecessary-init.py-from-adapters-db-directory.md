@@ -1,0 +1,1 @@
+refactor(structure): remove unnecessary __init__.py from adapters/db directory

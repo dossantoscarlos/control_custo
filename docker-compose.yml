@@ -34,7 +34,7 @@ services:
     image: quay.io/keycloak/keycloak:latest
     command: start --http-enabled=true
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/"]
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/9000' || exit 1"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -54,6 +54,7 @@ services:
       - KC_METRICS_ENABLED=true
     ports:
       - "8080:8080"
+      - "9000:9000"
     volumes:
       - ./realm-export.json:/opt/keycloak/data/import/realm.json
     networks:
@@ -110,7 +111,7 @@ services:
     deploy:
       resources:
         limits:
-          cpus: '0.5'
+          cpus: '1.5'
           memory: 512M
     restart: unless-stopped
     networks:
@@ -121,7 +122,7 @@ services:
     ports:
       - "8000:8000"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      test: ["CMD-SHELL", "bash -c 'exec 3<>/dev/tcp/localhost/8000' || exit 1"]
       interval: 5s
       timeout: 3s
       retries: 5

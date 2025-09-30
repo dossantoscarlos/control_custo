@@ -12,6 +12,10 @@ __pycache__
 *.pyc
 *.pyo
 *.pyd
+.venv
+.gemini
+.ruff_cache
+dist
 
 # Project files
 .http

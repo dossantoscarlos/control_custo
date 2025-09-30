@@ -1,0 +1,1 @@
+chore(docker): improve healthchecks and increase api cpu limit
