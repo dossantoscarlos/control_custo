@@ -2,11 +2,9 @@
 name = "control-custo"
 version = "0.1.0"
 description = ""
-authors = [
-    {name = "Carlos Eduardo",email = "anjoazrael10@gmail.com"}
-]
-readme = "README.md"
+authors = [{ name = "Carlos Eduardo", email = "anjoazrael10@gmail.com" }]
 requires-python = ">=3.11,<4.0"
+readme = "README.md"
 dependencies = [
     "fastapi (>=0.117.1,<0.118.0)",
     "pandas (>=2.3.2,<3.0.0)",
@@ -18,22 +16,29 @@ dependencies = [
     "requests (>=2.32.5,<3.0.0)",
     "types-python-jose (>=3.5.0.20250531,<4.0.0.0)",
     "types-requests (>=2.32.4.20250913,<3.0.0.0)",
-    "taskipy (>=1.14.1,<2.0.0)"
+    "taskipy (>=1.14.1,<2.0.0)",
 ]
 
-[tool.poetry]
-packages = [{include = "control_custo", from = "src"}]
+[dependency-groups]
+dev = [
+    "ruff>=0.13.1,<0.14",
+    "isort>=6.0.1,<7",
+]
 
+[tool.hatch.build.targets.sdist]
+include = ["src/control_custo"]
 
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.13.1"
-isort = "^6.0.1"
+[tool.hatch.build.targets.wheel]
+include = ["src/control_custo"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/control_custo" = "control_custo"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.taskipy.tasks]
 lint = "ruff check . && isort --check ."
 test = "pytest"
 run = "uvicorn src.control_custo.main:app --host 0.0.0.0 --port 8000 --reload"
-
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
