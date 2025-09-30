@@ -1,0 +1,1 @@
+docs(process): document git recovery and commit strategy

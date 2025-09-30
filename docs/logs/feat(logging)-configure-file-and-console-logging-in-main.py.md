@@ -1,0 +1,1 @@
+feat(logging): configure file and console logging in main.py
