@@ -2,6 +2,10 @@
 
 Este documento detalha o processo seguido para resolver o problema de corrupção do repositório Git, a estratégia de commits adotada e a criação do Pull Request.
 
+## Regras Principais
+
+1.  **Criação de Branch para Novas Soluções:** Toda vez que uma nova solução for implementada, uma nova branch deve ser criada para encapsular essas alterações.
+
 ## 1. Problema Inicial: Repositório Git Corrompido
 
 O processo iniciou com um erro fatal ao tentar executar `git status`, indicando que o repositório Git estava corrompido (`fatal: loose object ... is corrupt`).
