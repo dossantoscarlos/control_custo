@@ -1,0 +1,1 @@
+fix(otel): replace deprecated logging exporter with debug exporter

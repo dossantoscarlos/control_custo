@@ -1,0 +1,1 @@
+test(http): update auth token and enable token endpoint request

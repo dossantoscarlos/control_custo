@@ -1,0 +1,1 @@
+docs(logs): add log files for gemini changes

@@ -1,0 +1,1 @@
+refactor(auth): update TokenDTO to TokenResponse with error handling fields
